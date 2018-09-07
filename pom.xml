@@ -11,7 +11,8 @@
     <name>comm.github.jerrymice.common-pom</name>
     <description>
         this common pom file,may project parent pom,
-        avoid the hassle of repeatedly configuring profiles
+        avoid the hassle of repeatedly configuring many maven plugin,
+        It can help you quickly publish projects to GitHub and central repository.
         Reference to current project examples:
         <!--
          <paerent>
@@ -20,6 +21,22 @@
             <version>0.0.2.beta1</version>
         </paerent>
         -->
+        before use this pom profile,you need config maven setting.xml
+            1.setting.xml sonatype-repository config:
+            <!--
+                <server>
+                        <id>sonatype-release</id>
+                        <username>your sonatype repository username</username>
+                        <password>your sonatype repository password</password>
+                </server>
+                -->
+            2.setting.xml gpg passphrase config:
+                <!--
+                <server>
+                        <id>gpg.passphrase</id>
+                        <passphrase>password with you generate gpg key</passphrase>
+                </server>
+                -->
         release project to Maven Central Repository command line:
            1.release prepare command line examples:
                     mvn release:perpare
@@ -29,7 +46,7 @@
                         -P public-release
            2.release perform common line examples:
                     mvn release:perform
-           3.you can change properties property value modify default version or configuration value if you need.
+           3.you can override properties property value, update default version or configuration value in your project, if you need do it.
     </description>
     <url>https://github.com/jerrymice/common-pom</url>
     <licenses>
