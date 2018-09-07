@@ -6,7 +6,7 @@
 
     <groupId>com.github.jerrymice.common</groupId>
     <artifactId>common-pom</artifactId>
-    <version>0.0.2.beta1-SANPSHOT</version>
+    <version>0.0.2.beta1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>comm.github.jerrymice.common-pom</name>
     <description>
@@ -41,7 +41,7 @@
            1.release prepare command line examples:
                     mvn release:perpare
                         -DreleaseVersion=0.0.2.beta2
-                        -DdevelopmentVersion=0.0.2.beta3-SANPSHOT
+                        -DdevelopmentVersion=0.0.2.beta3-SNAPSHOT
                         -Dtag=common-pom.0.0.2.beta2
                         -P public-release
            2.release perform common line examples:
