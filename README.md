@@ -1,6 +1,6 @@
 Common Project Release Parent Pom
 =====================================
-[![Maven central](https://maven-badges.herokuapp.com/maven-central/com.github.jerrymice/common/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.jerrymice.common/common-entity)
+[![Maven central](https://maven-badges.herokuapp.com/maven-central/com.github.jerrymice/common/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.jerrymice.common/common-pom)
 [![License](http://img.shields.io/:license-apache-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 This common pom file,may project parent pom,
@@ -68,5 +68,5 @@ More docs:
 
    [Maven-release-plugin](http://maven.apache.org/maven-release/maven-release-plugin)
 
-   [Nexus-staging-maven-plugin](#)
+   [Nexus-staging-maven-plugin](http://#)
 
