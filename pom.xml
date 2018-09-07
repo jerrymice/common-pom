@@ -171,10 +171,8 @@
                         <artifactId>maven-release-plugin</artifactId>
                         <version>${maven.release.plugin.version}</version>
                         <configuration>
-                            <autoVersionSubmodules>true</autoVersionSubmodules>
+                            <autoVersionSubmodules>${maven.release.plugin.autoVersionSubmodules}</autoVersionSubmodules>
                             <generateReleasePoms>false</generateReleasePoms>
-                            <useReleaseProfile>false</useReleaseProfile>
-                            <releaseProfiles>public-release</releaseProfiles>
                         </configuration>
                     </plugin>
                     <plugin>
