@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.jerrymice.common</groupId>
+    <artifactId>common-pom</artifactId>
+    <version>0.0.2.beta1</version>
+    <packaging>pom</packaging>
+    <name>comm.github.jerrymice.common-pom</name>
+    <description>
+        this common pom file,may project parent pom,
+        avoid the hassle of repeatedly configuring profiles
+        Reference to current project examples:
+        <!--
+         <paerent>
+            <groupId>com.github.jerrymice.common</groupId>
+            <artifactId>common-pom</artifactId>
+            <version>0.0.2.beta1</version>
+        </paerent>
+        -->
+        release project to Maven Central Repository command line:
+           1.release prepare command line examples:
+                    mvn release:perpare
+                        -DreleaseVersion=0.0.2.beta2
+                        -DdevelopmentVersion=0.0.2.beta3-SANPSHOT
+                        -Dtag=common-pom.0.0.2.beta2
+                        -P public-release
+           2.release perform common line examples:
+                    mvn release:perform
+           3.you can change properties property value modify default version or configuration value if you need.
+    </description>
+    <url>https://github.com/jerrymice/common-pom</url>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>jerrymice</name>
+            <email>tumingjian@qq.com</email>
+            <organization>Sonatype</organization>
+            <organizationUrl>https://github.com/jerrymice</organizationUrl>
+        </developer>
+    </developers>
+    <issueManagement>
+        <url>https://github.com/jerrymice/common-pom/issues</url>
+    </issueManagement>
+    <scm>
+        <url>http://github.com/jerrymice/common-pom</url>
+        <connection>scm:git:ssh://github.com/jerrymice/common-pom</connection>
+        <developerConnection>scm:git:ssh://git@github.com/jerrymice/common-pom.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--base dependencyManagement item-->
+        <org.slf4j.version>1.7.25</org.slf4j.version>
+        <org.junit.version>4.12</org.junit.version>
+        <org.lombok.version>1.18.2</org.lombok.version>
+        <!--maven plugin version-->
+        <maven.source.plugin.version>3.0.1</maven.source.plugin.version>
+        <maven.javadoc.plugin.version>3.0.1</maven.javadoc.plugin.version>
+        <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
+        <maven.release.plugin.version>2.5.3</maven.release.plugin.version>
+        <maven.nexus-staging.plugin.version>1.6.7</maven.nexus-staging.plugin.version>
+        <!--configuration item default value-->
+        <maven.release.plugin.autoVersionSubmodules>true</maven.release.plugin.autoVersionSubmodules>
+        <maven.javadoc.plugin.outputDirectory>${project.build.outputDirectory}/site</maven.javadoc.plugin.outputDirectory>
+        <maven.javadoc.plugin.reportOutputDirectory>${project.build.outputDirectory}/report</maven.javadoc.plugin.reportOutputDirectory>
+        <maven.nexus-staging.plugin.autoReleaseAfterClose>true</maven.nexus-staging.plugin.autoReleaseAfterClose>
+        <maven.nexus-staging.plugin.serverId>sonatype-release</maven.nexus-staging.plugin.serverId>
+    </properties>
+    <dependencies></dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${org.junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${org.slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${org.lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <profiles>
+        <profile>
+            <id>public-release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>${maven.source.plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${maven.javadoc.plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <encoding>UTF-8</encoding>
+                            <outputDirectory>${maven.javadoc.plugin.outputDirectory}</outputDirectory>
+                            <reportOutputDirectory>${maven.javadoc.plugin.reportOutputDirectory}</reportOutputDirectory>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>${maven.gpg.plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-release-plugin</artifactId>
+                        <version>${maven.release.plugin.version}</version>
+                        <configuration>
+                            <autoVersionSubmodules>true</autoVersionSubmodules>
+                            <generateReleasePoms>false</generateReleasePoms>
+                            <useReleaseProfile>false</useReleaseProfile>
+                            <releaseProfiles>public-release</releaseProfiles>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>${maven.nexus-staging.plugin.version}</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>${maven.nexus-staging.plugin.serverId}</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>${maven.nexus-staging.plugin.autoReleaseAfterClose}</autoReleaseAfterClose>
+                            <goal>deploy</goal>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
