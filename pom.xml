@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.jerrymice.common</groupId>
@@ -13,98 +14,109 @@
         It can help you quickly publish projects to GitHub and Maven Central Repository.
 
         Reference to current project examples:
-            <!--
-            <paerent>
-                <groupId>com.github.jerrymice.common</groupId>
-                <artifactId>common-pom</artifactId>
-                <version>0.0.2.beta1</version>
-            </paerent>
-            -->
+        <!--
+        <paerent>
+            <groupId>com.github.jerrymice.common</groupId>
+            <artifactId>common-pom</artifactId>
+            <version>0.0.2.beta1</version>
+        </paerent>
+        -->
         before use this pom profile,you need config maven setting.xml
 
         1.setting.xml sonatype-repository config:
-            <!--
-            <server>
-                <id>sonatype-release</id>
-                <username>your sonatype repository username</username>
-                <password>your sonatype repository password</password>
-            </server>
-            -->
+        <!--
+        <server>
+            <id>sonatype-release</id>
+            <username>your sonatype repository username</username>
+            <password>your sonatype repository password</password>
+        </server>
+        -->
         2.setting.xml gpg passphrase config:
-            <!--
-            <server>
-                <id>gpg.passphrase</id>
-                <passphrase>password with you generate gpg key</passphrase>
-            </server>
-            -->
+        <!--
+        <server>
+            <id>gpg.passphrase</id>
+            <passphrase>password with you generate gpg key</passphrase>
+        </server>
+        -->
         release project to Maven Central Repository command line:
 
         1.release prepare command line examples:
 
-            mvn release:perpare
-                -DreleaseVersion=0.0.2.beta2
-                -DdevelopmentVersion=0.0.2.beta3-SNAPSHOT
-                -Dtag=common-pom.0.0.2.beta2
-                -P public-release
+        mvn release:perpare
+            -DreleaseVersion=0.0.2.beta2
+            -DdevelopmentVersion=0.0.2.beta3-SNAPSHOT
+            -Dtag=common-pom.0.0.2.beta2
+            -P public-release
 
         if your project include child module,you need user common line
 
-            mvn release:prepare-with-pom
-                -DreleaseVersion=0.0.2.beta2
-                -DdevelopmentVersion=0.0.2.beta3-SNAPSHOT
-                -Dtag=common-pom.0.0.2.beta2
-                -P public-release
+        mvn release:prepare-with-pom
+            -DreleaseVersion=0.0.2.beta2
+            -DdevelopmentVersion=0.0.2.beta3-SNAPSHOT
+            -Dtag=common-pom.0.0.2.beta2
+            -P public-release
 
         2.next:release perform common line examples:
 
-            mvn release:perform -P public-release
+        mvn release:perform -P public-release
 
-        you can override properties property value, update default version or configuration value in your project, if you need do it.
+        you can override properties property value, update default version or configuration value in your project, if
+        you need do it.
         examples:
 
-            <!--used maven-nexus-stging-plugin new version-->
-            <!--  <maven.nexus-staging.plugin.version>1.6.8</maven.nexus-staging.plugin.version>  -->
+        <!--used maven-nexus-stging-plugin new version-->
+        <!--  <maven.nexus-staging.plugin.version>1.6.8</maven.nexus-staging.plugin.version>  -->
 
-            <!--override maven-nexus-stging-plugin autoReleaseAfterClose configuration value  -->
-            <!-- <maven.nexus-staging.plugin.autoReleaseAfterClose>false</maven.nexus-staging.plugin.autoReleaseAfterClose> -->
+        <!--override maven-nexus-stging-plugin autoReleaseAfterClose configuration value  -->
+        <!-- <maven.nexus-staging.plugin.autoReleaseAfterClose>false</maven.nexus-staging.plugin.autoReleaseAfterClose> -->
         more docs:
 
-            maven
+        maven
 
-            maven-release-plugin
+        maven-release-plugin
 
-            maven-nexus-stging-plugin
-</description>
-<url>https://github.com/jerrymice/common-pom</url>
-<licenses>
-    <license>
-        <name>The Apache License, Version 2.0</name>
-        <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-    </license>
-</licenses>
-<developers>
-    <developer>
-        <name>jerrymice</name>
-        <email>tumingjian@qq.com</email>
-        <organization>Sonatype</organization>
-        <organizationUrl>https://github.com/jerrymice</organizationUrl>
-    </developer>
-</developers>
-<issueManagement>
-    <url>https://github.com/jerrymice/common-pom/issues</url>
-</issueManagement>
-<scm>
-    <url>http://github.com/jerrymice/common-pom</url>
-    <connection>scm:git:ssh://github.com/jerrymice/common-pom</connection>
-    <developerConnection>scm:git:ssh://git@github.com/jerrymice/common-pom.git</developerConnection>
-    <tag>HEAD</tag>
-</scm>
-<properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <!--base dependencyManagement item-->
+        maven-nexus-stging-plugin
+    </description>
+    <url>https://github.com/jerrymice/common-pom</url>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>jerrymice</name>
+            <email>tumingjian@qq.com</email>
+            <organization>Sonatype</organization>
+            <organizationUrl>https://github.com/jerrymice</organizationUrl>
+        </developer>
+    </developers>
+    <issueManagement>
+        <url>https://github.com/jerrymice/common-pom/issues</url>
+    </issueManagement>
+    <scm>
+        <url>http://github.com/jerrymice/common-pom</url>
+        <connection>scm:git:ssh://github.com/jerrymice/common-pom</connection>
+        <developerConnection>scm:git:ssh://git@github.com/jerrymice/common-pom.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>sonatype-release</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>sonatype-release</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--base dependencyManagement item-->
         <org.slf4j.version>1.7.25</org.slf4j.version>
         <org.junit.version>4.12</org.junit.version>
         <org.lombok.version>1.18.2</org.lombok.version>
@@ -116,12 +128,14 @@
         <maven.nexus-staging.plugin.version>1.6.7</maven.nexus-staging.plugin.version>
         <!--configuration item default value-->
         <maven.release.plugin.autoVersionSubmodules>true</maven.release.plugin.autoVersionSubmodules>
-        <maven.javadoc.plugin.outputDirectory>${project.build.outputDirectory}/site</maven.javadoc.plugin.outputDirectory>
-        <maven.javadoc.plugin.reportOutputDirectory>${project.build.outputDirectory}/report</maven.javadoc.plugin.reportOutputDirectory>
+        <maven.javadoc.plugin.outputDirectory>${project.build.outputDirectory}/site
+        </maven.javadoc.plugin.outputDirectory>
+        <maven.javadoc.plugin.reportOutputDirectory>${project.build.outputDirectory}/report
+        </maven.javadoc.plugin.reportOutputDirectory>
         <maven.nexus-staging.plugin.autoReleaseAfterClose>true</maven.nexus-staging.plugin.autoReleaseAfterClose>
         <maven.nexus-staging.plugin.serverId>sonatype-release</maven.nexus-staging.plugin.serverId>
     </properties>
-    <dependencies />
+    <dependencies/>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -210,7 +224,8 @@
                         <configuration>
                             <serverId>${maven.nexus-staging.plugin.serverId}</serverId>
                             <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                            <autoReleaseAfterClose>${maven.nexus-staging.plugin.autoReleaseAfterClose}</autoReleaseAfterClose>
+                            <autoReleaseAfterClose>${maven.nexus-staging.plugin.autoReleaseAfterClose}
+                            </autoReleaseAfterClose>
                             <goal>deploy</goal>
                         </configuration>
                     </plugin>
