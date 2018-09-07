@@ -1,3 +1,6 @@
+[![Maven central](https://maven-badges.herokuapp.com/maven-central/com.github.jerrymice/common/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.jerrymice.common/common-entity)
+[![License](http://img.shields.io/:license-apache-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+
 This common pom file,may project parent pom,
 avoid the hassle of repeatedly configuring many maven plugin,
 It can help you quickly publish projects to GitHub and central repository.
@@ -59,9 +62,9 @@ You can override properties property value, update default version or configurat
 			<maven.nexus-staging.plugin.autoReleaseAfterClose>false</maven.nexus-staging.plugin.autoReleaseAfterClose>
 More docs:
 
-	Maven
+	[Maven](http://maven.apache.org/users/index.html)
 
-	Maven-release-plugin
+	[Maven-release-plugin](http://maven.apache.org/maven-release/maven-release-plugin)
 
-	Maven-nexus-stging-plugin
+	[Nexus-staging-maven-plugin]
 
