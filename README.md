@@ -61,10 +61,7 @@ You can override properties property value, update default version or configurat
 			<!--override maven-nexus-stging-plugin autoReleaseAfterClose configuration value->
 			<maven.nexus-staging.plugin.autoReleaseAfterClose>false</maven.nexus-staging.plugin.autoReleaseAfterClose>
 More docs:
-
-	[Maven](http://maven.apache.org/users/index.html)
-
+    [Maven](http://maven.apache.org/users/index.html)
 	[Maven-release-plugin](http://maven.apache.org/maven-release/maven-release-plugin)
-
-	[Nexus-staging-maven-plugin]
+	[Nexus-staging-maven-plugin](#)
 
