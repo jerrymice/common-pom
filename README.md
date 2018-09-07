@@ -3,9 +3,8 @@ Common Project Release Parent Pom
 [![Maven central](https://maven-badges.herokuapp.com/maven-central/com.github.jerrymice/common/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.jerrymice.common/common-pom)
 [![License](http://img.shields.io/:license-apache-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-This common pom file,may project parent pom,
-avoid the hassle of repeatedly configuring many maven plugin,
-It can help you quickly publish projects to GitHub and central repository.
+This common pom file,avoid the hassle of repeatedly configuring many maven plugin,
+It can help you quickly publish projects to GitHub and Maven Central Repository.
 
 Reference to current project examples:
 
