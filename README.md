@@ -1,4 +1,4 @@
-this common pom file,may project parent pom,
+This common pom file,may project parent pom,
 avoid the hassle of repeatedly configuring many maven plugin,
 It can help you quickly publish projects to GitHub and central repository.
 
@@ -10,7 +10,7 @@ Reference to current project examples:
 		<version>0.0.2.beta1</version>
 	</paerent>
 
-before use this pom profile,you need config maven setting.xml
+Before use this pom profile,you need config maven setting.xml
 
     1.setting.xml sonatype-repository config:
 
@@ -27,7 +27,7 @@ before use this pom profile,you need config maven setting.xml
                 <passphrase>password with you generate gpg key</passphrase>
         </server>
 
-release project to Maven Central Repository command line:
+Release project to Maven Central Repository command line:
 
 	1.release prepare command line examples:
 
@@ -49,7 +49,7 @@ release project to Maven Central Repository command line:
 
 			mvn release:perform -P public-release
 
-you can override properties property value, update default version or configuration value in your project, if you need do it.
+You can override properties property value, update default version or configuration value in your project, if you need do it.
    	 examples:
 
 			<!--used maven-nexus-stging-plugin new version-->
@@ -57,11 +57,11 @@ you can override properties property value, update default version or configurat
 
 			<!--override maven-nexus-stging-plugin autoReleaseAfterClose configuration value->
 			<maven.nexus-staging.plugin.autoReleaseAfterClose>false</maven.nexus-staging.plugin.autoReleaseAfterClose>
-more docs:
+More docs:
 
-	maven
+	Maven
 
-	maven-release-plugin
+	Maven-release-plugin
 
-	maven-nexus-stging-plugin
+	Maven-nexus-stging-plugin
 
