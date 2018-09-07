@@ -1,3 +1,5 @@
+Common Project Release Parent Pom
+=====================================
 [![Maven central](https://maven-badges.herokuapp.com/maven-central/com.github.jerrymice/common/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.jerrymice.common/common-entity)
 [![License](http://img.shields.io/:license-apache-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
@@ -61,7 +63,10 @@ You can override properties property value, update default version or configurat
 			<!--override maven-nexus-stging-plugin autoReleaseAfterClose configuration value->
 			<maven.nexus-staging.plugin.autoReleaseAfterClose>false</maven.nexus-staging.plugin.autoReleaseAfterClose>
 More docs:
-    [Maven](http://maven.apache.org/users/index.html)
-	[Maven-release-plugin](http://maven.apache.org/maven-release/maven-release-plugin)
-	[Nexus-staging-maven-plugin](#)
+
+   [Maven](http://maven.apache.org/users/index.html)
+
+   [Maven-release-plugin](http://maven.apache.org/maven-release/maven-release-plugin)
+
+   [Nexus-staging-maven-plugin](#)
 
