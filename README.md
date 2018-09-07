@@ -27,7 +27,7 @@ Before use this pom profile,you need config maven setting.xml
                 <passphrase>password with you generate gpg key</passphrase>
         </server>
 
-Release project to Maven Central Repository command line:
+Release project into Maven Central Repository command line:
 
 	1.release prepare command line examples:
 
