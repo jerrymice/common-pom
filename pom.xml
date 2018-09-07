@@ -7,9 +7,6 @@
     <version>0.0.2.beta2-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>comm.github.jerrymice.common-pom</name>
-    <modules>
-        <module></module>
-    </modules>
     <description>
         this common pom file,may project parent pom,
         avoid the hassle of repeatedly configuring many maven plugin,
