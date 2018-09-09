@@ -47,7 +47,7 @@
             -Dtag=common-pom.0.0.2.beta2
             -P public-release
 
-        if your project include child module,you need user common line
+        if your project include child module,you need use command line
 
         mvn release:prepare-with-pom
             -DreleaseVersion=0.0.2.beta2
@@ -55,7 +55,7 @@
             -Dtag=common-pom.0.0.2.beta2
             -P public-release
 
-        2.next:release perform common line examples:
+        2.next:release perform command line examples:
 
         mvn release:perform -P public-release
 
