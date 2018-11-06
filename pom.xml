@@ -157,6 +157,23 @@
         </dependencies>
     </dependencyManagement>
     <profiles>
+        <!--发布到本地私有仓库-->
+        <profile>
+            <id>nexus-releases</id>
+            <distributionManagement>
+                <repository>
+                    <id>nexus-releases</id>
+                    <name>Nexus Releases Repository</name>
+                    <url>${nexus.repository.releases.url}</url>
+                </repository>
+                <snapshotRepository>
+                    <id>nexus-snapshots</id>
+                    <name>Nexus Snapshots Repository</name>
+                    <url>${nexus.repository.snapshots.url}</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+        <!--发布到公有仓库-->
         <profile>
             <id>public-release</id>
             <build>
