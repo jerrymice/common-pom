@@ -54,7 +54,7 @@ Release project into Maven Central Repository command line:
 			mvn release:perform -P public-release
 
 You can override properties property value, update default version or configuration value in your project, if you need do it.
-   	 examples:
+    examples:
 
 			<!--used maven-nexus-stging-plugin new version-->
 			<maven.nexus-staging.plugin.version>1.6.8</maven.nexus-staging.plugin.version>
@@ -62,19 +62,23 @@ You can override properties property value, update default version or configurat
 			<!--override maven-nexus-stging-plugin autoReleaseAfterClose configuration value->
 			<maven.nexus-staging.plugin.autoReleaseAfterClose>false</maven.nexus-staging.plugin.autoReleaseAfterClose>
 Your project can deploy nexus repository,your need modify maven settings.xml
-     1.examples:
-         </profiles>
-            <profile>
-              <properties>
-                <nexus.repository.snapshots.url>http://192.168.1.101:8091/nexus/content/repositories/snapshots/</nexus.repository.snapshots.url>
-                <nexus.repository.releases.url>http://192.168.1.101:8091/nexus/content/repositories/release/</nexus.repository.releases.url>
-              </properties>
-              <activation>
-                <activeByDefault>true</activeByDefault>
-              </activation>
-            </profile>
-          </profiles>
-     2.run command line deploy project into nexus repository:
+
+    1.maven settings.xml config:
+
+             </profiles>
+                <profile>
+                  <properties>
+                    <nexus.repository.snapshots.url>http://192.168.1.101:8091/nexus/content/repositories/snapshots/</nexus.repository.snapshots.url>
+                    <nexus.repository.releases.url>http://192.168.1.101:8091/nexus/content/repositories/release/</nexus.repository.releases.url>
+                  </properties>
+                  <activation>
+                    <activeByDefault>true</activeByDefault>
+                  </activation>
+                </profile>
+              </profiles>
+
+    2.run command line deploy project into nexus repository:
+
         mvn deploy -P nexus-releases
 More docs:
 
