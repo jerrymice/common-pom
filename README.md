@@ -35,7 +35,7 @@ Release project into Maven Central Repository command line:
 
 	1.release prepare command line examples:
 
-			mvn release:perpare
+			mvn release:prepare
 				-DreleaseVersion=0.0.2.beta2
 				-DdevelopmentVersion=0.0.2.beta3-SNAPSHOT
 				-Dtag=common-pom.0.0.2.beta2
