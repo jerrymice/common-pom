@@ -61,6 +61,21 @@ You can override properties property value, update default version or configurat
 
 			<!--override maven-nexus-stging-plugin autoReleaseAfterClose configuration value->
 			<maven.nexus-staging.plugin.autoReleaseAfterClose>false</maven.nexus-staging.plugin.autoReleaseAfterClose>
+Your project can deploy nexus repository,your need modify maven settings.xml
+     1.examples:
+         </profiles>
+            <profile>
+              <properties>
+                <nexus.repository.snapshots.url>http://192.168.1.101:8091/nexus/content/repositories/snapshots/</nexus.repository.snapshots.url>
+                <nexus.repository.releases.url>http://192.168.1.101:8091/nexus/content/repositories/release/</nexus.repository.releases.url>
+              </properties>
+              <activation>
+                <activeByDefault>true</activeByDefault>
+              </activation>
+            </profile>
+          </profiles>
+     2.run command line deploy project into nexus repository:
+        mvn deploy -P nexus-releases
 More docs:
 
    [Maven](http://maven.apache.org/users/index.html)
