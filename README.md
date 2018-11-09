@@ -3,8 +3,9 @@ Common Project Release Parent Pom
 [![Maven central](https://maven-badges.herokuapp.com/maven-central/com.github.jerrymice/common/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.jerrymice.common/common-pom)
 [![License](http://img.shields.io/:license-apache-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-This common pom file,avoid the hassle of repeatedly configuring many maven plugin,
-It can help you quickly publish projects to GitHub and Maven Central Repository.
+        this common pom file,may project parent pom,
+        avoid the hassle of repeatedly configuring many maven plugin,
+        It can help you quickly publish projects to GitHub and Maven Central Repository or Private Nexus Repository.
 
 Reference to current project examples:
 
@@ -64,12 +65,17 @@ You can override properties property value, update default version or configurat
 Your project can deploy nexus repository,your need modify maven settings.xml
 
     1.maven settings.xml config:
+             <server>
+                 <id>nexus-release</id>
+                  <username>deployment</username>
+                  <password>password</password>
+             </server>
 
              </profiles>
                 <profile>
                   <properties>
                     <nexus.repository.snapshots.url>http://192.168.1.101:8091/nexus/content/repositories/snapshots/</nexus.repository.snapshots.url>
-                    <nexus.repository.releases.url>http://192.168.1.101:8091/nexus/content/repositories/release/</nexus.repository.releases.url>
+                    <nexus.repository.releases.url>http://192.168.1.101:8091/nexus/content/repositories/releases/</nexus.repository.releases.url>
                   </properties>
                   <activation>
                     <activeByDefault>true</activeByDefault>

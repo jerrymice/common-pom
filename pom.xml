@@ -10,7 +10,7 @@
     <description>
         this common pom file,may project parent pom,
         avoid the hassle of repeatedly configuring many maven plugin,
-        It can help you quickly publish projects to GitHub and Maven Central Repository.
+        It can help you quickly publish projects to GitHub and Maven Central Repository or Private Nexus Repository.
     </description>
     <url>https://github.com/jerrymice/common-pom</url>
     <licenses>
