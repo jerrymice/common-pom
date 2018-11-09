@@ -36,16 +36,6 @@
         <developerConnection>scm:git:ssh://git@github.com/jerrymice/common-pom.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
-    <distributionManagement>
-        <snapshotRepository>
-            <id>sonatype-release</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </snapshotRepository>
-        <repository>
-            <id>sonatype-release</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -95,10 +85,10 @@
     <profiles>
         <!--发布到本地私有仓库-->
         <profile>
-            <id>nexus-releases</id>
+            <id>nexus-release</id>
             <distributionManagement>
                 <repository>
-                    <id>nexus-releases</id>
+                    <id>nexus-release</id>
                     <name>Nexus Releases Repository</name>
                     <url>${nexus.repository.releases.url}</url>
                 </repository>
@@ -108,10 +98,21 @@
                     <url>${nexus.repository.snapshots.url}</url>
                 </snapshotRepository>
             </distributionManagement>
+            <activation><activeByDefault>true</activeByDefault></activation>
         </profile>
         <!--发布到公有仓库-->
         <profile>
             <id>public-release</id>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>sonatype-release</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+                </snapshotRepository>
+                <repository>
+                    <id>sonatype-release</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
             <build>
                 <plugins>
                     <plugin>
