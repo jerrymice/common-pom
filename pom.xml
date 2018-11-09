@@ -4,7 +4,7 @@
 
     <groupId>com.github.jerrymice.common</groupId>
     <artifactId>common-pom</artifactId>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.0.4</version>
     <packaging>pom</packaging>
     <name>comm.github.jerrymice.common-pom</name>
     <description>
@@ -34,7 +34,7 @@
         <url>http://github.com/jerrymice/common-pom</url>
         <connection>scm:git:ssh://github.com/jerrymice/common-pom</connection>
         <developerConnection>scm:git:ssh://git@github.com/jerrymice/common-pom.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>common-pom.0.0.4</tag>
     </scm>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
